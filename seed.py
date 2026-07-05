@@ -7,13 +7,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 authors_path = BASE_DIR / "authors.json"
-qoutes_path = BASE_DIR / "quotes.json"
+quotes_path = BASE_DIR / "quotes.json"
 
 
 if __name__ == '__main__':
     with authors_path.open(encoding="utf-8") as fd:
         data = json.load(fd)
-        print("Authors in file:", len(data))
+        # print("Authors in file:", len(data))
         for el in data:
             try:
                 author = Author(fullname=el.get('fullname'), born_date=el.get('born_date'),
@@ -22,9 +22,9 @@ if __name__ == '__main__':
             except NotUniqueError:
                 print(f"Автор вже існує {el.get('fullname')}")
 
-    with qoutes_path.open(encoding="utf-8") as fd:
+    with quotes_path.open(encoding="utf-8") as fd:
         data = json.load(fd)
-        print("🚀 ~ data2:", data)
+        # print("🚀 ~ data2:", data)
         for el in data:
             author = Author.objects(fullname=el.get("author")).first()
 
