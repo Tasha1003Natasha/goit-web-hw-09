@@ -1,0 +1,16 @@
+[project]
+name = "goit-web-hw-09"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Tasha Natasha",email = "0955712824n@gmail.com"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "scrapy (>=2.16.0,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
